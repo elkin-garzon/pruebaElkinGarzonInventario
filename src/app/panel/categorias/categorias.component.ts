@@ -20,6 +20,7 @@ export class CategoriasComponent implements OnInit {
 	public category: Categoria = new Categoria();
 	public selectCategory: Categoria = new Categoria();
 	public viewProducts: Boolean = false;
+	public user: any = {};
 
 	constructor(
 		public service: CategoriaService,
@@ -29,6 +30,7 @@ export class CategoriasComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
+		this.user = JSON.parse(localStorage.getItem('user'));
 		this.formFilter = this.formBuilder.group({
 			categoria: [this.category.categoria, [Validators.required, Validators.minLength(3)]]
 		});

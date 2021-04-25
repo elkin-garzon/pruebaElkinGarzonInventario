@@ -6,13 +6,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
 const routes: Routes = [
 	{
 		path: '',
-		component: IndexComponent,
-		children: [
-			{
-				path: 'listaCategoria',
-				component: CategoriasComponent
-			}
-		]
+		component: CategoriasComponent
 	}
 ];
 

@@ -1,4 +1,11 @@
 <div class="row justify-content-md-center">
+    <div class="col-md-8">
+        <ul>
+            <li>
+                <a [routerLink]="['/']">salir</a>
+            </li>
+        </ul>
+    </div>
     <div class="col-md-8 mx-auto">
         <mat-card class="example-card">
             <mat-card-header>
@@ -18,8 +25,8 @@
                             </mat-form-field>
                         </form>
                     </div>
-                    <div class="col-md-3">
-                        <button mat-raised-button color="primary" type="button" (click)="openDialog()" style="width: 100%;">Agregar</button>
+                    <div class="col-md-3" *ngIf="user.id_rol == 1">
+                        <button mat-raised-button color="primary" type="button" (click)="openDialog()" style="width: 100%;" >Agregar</button>
                     </div>
 
                     <div class="col-md-3">

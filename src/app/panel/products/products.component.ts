@@ -21,13 +21,14 @@ export class ProductsComponent implements OnInit {
 	public total: number = 0;
 	public subTotal: number = 0;
 	public totaIva: number = 0;
+	public user: any = {};
 
 	constructor(
 		public dialog: MatDialog,
 	) { }
 
 	ngOnInit(): void {
-
+		this.user = JSON.parse(localStorage.getItem('user'));
 	}
 
 	checkProduct() {

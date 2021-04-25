@@ -6,12 +6,16 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { IndexComponent } from './index.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { CategoryDialogComponent } from './category-dialog/category-dialog.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductsDialogComponent } from './products-dialog/products-dialog.component';
 
 @NgModule({
 	declarations: [
 		IndexComponent,
 		CategoriasComponent,
-		CategoryDialogComponent
+		CategoryDialogComponent,
+		ProductsComponent,
+		ProductsDialogComponent
 	],
 	imports: [
 		CommonModule,
@@ -21,7 +25,8 @@ import { CategoryDialogComponent } from './category-dialog/category-dialog.compo
 		ReactiveFormsModule
 	],
 	entryComponents: [
-		CategoryDialogComponent
+		CategoryDialogComponent,
+		ProductsDialogComponent
 	]
 })
 export class PanelModule { }

@@ -5,6 +5,7 @@
                 <h3>Categorias</h3>
             </mat-card-header>
             <mat-card-content>
+                <hr>
                 <div class="row">
                     <div class="col-md-6">
                         <form [formGroup]="formFilter" class="row">
@@ -41,12 +42,21 @@
                                 <tr *ngFor="let row of listCategories">
                                     <td>{{row.id}}</td>
                                     <td>{{row.categoria}}</td>
-                                    <td> prueba</td>
+                                    <td>
+                                        <mat-radio-button  color="primary" class="example-radio-button" [value]="row.categoria" (click)="selectedCategory(row)"> </mat-radio-button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="example-card" *ngIf="viewProducts">
+            <mat-card-content>
+                <hr>
+                <app-products [sendData]="listProducts" [category]="selectCategory" (eventCategory)="receiveData($event)"></app-products>
             </mat-card-content>
         </mat-card>
     </div>

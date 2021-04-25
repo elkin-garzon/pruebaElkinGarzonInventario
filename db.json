@@ -29,26 +29,64 @@
     {
       "categoria": "prueba",
       "id": 2
+    }
+  ],
+  "productos": [
+    {
+      "nombre": "esfero",
+      "id_categoria": 1,
+      "precio": 800,
+      "estado": false,
+      "id": 1
     },
     {
-      "categoria": "prueba dos",
+      "nombre": "lapiz",
+      "id_categoria": 2,
+      "precio": 1000,
+      "estado": false,
+      "id": 2
+    },
+    {
+      "nombre": "lapiz 2",
+      "id_categoria": 2,
+      "precio": 12345,
+      "estado": false,
       "id": 3
     },
     {
-      "categoria": "prueba ",
+      "nombre": "prueba",
+      "id_categoria": 1,
+      "precio": 12,
+      "estado": false,
       "id": 4
     },
     {
-      "categoria": "prueba",
+      "nombre": "prueba 2",
+      "id_categoria": 1,
+      "precio": 1500,
+      "estado": false,
       "id": 5
     },
     {
-      "categoria": "prueba 13",
+      "nombre": "prueba 3",
+      "id_categoria": 1,
+      "precio": 1000,
+      "estado": false,
       "id": 6
     },
     {
-      "categoria": "prueba adasd",
+      "nombre": "prueba 4",
+      "id_categoria": 1,
+      "precio": 1000,
+      "estado": false,
       "id": 7
+    },
+    {
+      "nombre": "prueba 2 ",
+      "id_categoria": 2,
+      "precio": 1000,
+      "estado": false,
+      "id": 8
     }
   ]
 }

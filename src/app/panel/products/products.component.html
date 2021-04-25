@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-8">
+        <h3>Productos: 
+            <strong>{{category.categoria}}</strong> 
+        </h3>
+    </div>
+    <div class="col-md-4">
+        <button mat-raised-button color="primary" type="button" (click)="openDialog()" style="width: 100%;">Agregar</button>
+    </div>
+    <div class="col-md-12">
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>producto</th>
+                    <th>precio</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of sendData">
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.nombre }}</td>
+                    <td>{{ row.precio | currency }}</td>
+                    <td>
+                        <mat-checkbox  [checked]="row.estado" color="primary"  [(ngModel)]="row.estado"  (ngModelChange)="checkProduct(row)"></mat-checkbox>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

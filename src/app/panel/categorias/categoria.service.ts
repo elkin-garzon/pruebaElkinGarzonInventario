@@ -23,11 +23,14 @@ export class CategoriaService {
 		let url = `${environment.urlBack}/categorias`;
 		let params = new HttpParams();
 		params = params.append('q', filter.categoria);
-		return this.http.get(url, {params})
+		return this.http.get(url, { params })
 	}
 
 	postData(data: Categoria) {
 		let url = `${environment.urlBack}/categorias`;
 		return this.http.post(url, data)
 	}
+
+
+	
 }

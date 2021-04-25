@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from './categoria.service';
 import { Categoria } from './categoria';
+import { Products } from '../products/products';
 import { MatDialog } from '@angular/material/dialog';
 import { CategoryDialogComponent } from '../category-dialog/category-dialog.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductsService } from '../products/products.service';
 
 @Component({
 	selector: 'app-categorias',
@@ -13,11 +15,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CategoriasComponent implements OnInit {
 
 	public listCategories: Array<Categoria> = [];
+	public listProducts: Array<Products> = [];
 	public formFilter: FormGroup;
 	public category: Categoria = new Categoria();
+	public selectCategory: Categoria = new Categoria();
+	public viewProducts: Boolean = false;
 
 	constructor(
 		public service: CategoriaService,
+		public productService: ProductsService,
 		public dialog: MatDialog,
 		public formBuilder: FormBuilder,
 	) { }
@@ -58,5 +64,20 @@ export class CategoriasComponent implements OnInit {
 				this.listCategories = resp;
 			})
 		}
+	}
+
+	selectedCategory(row: Categoria) {
+		this.selectCategory = row;
+		this.viewProducts = false;
+		this.productService.getDataProducts(row).subscribe((resp: any) => {
+			this.viewProducts = true;
+			this.listProducts = resp;
+		})
+	}
+
+	receiveData($event) {
+		this.selectCategory = new Categoria();
+		this.selectCategory.id = $event.id_categoria;
+		this.selectedCategory(this.selectCategory);
 	}
 }

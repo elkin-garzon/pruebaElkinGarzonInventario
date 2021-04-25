@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
+		localStorage.clear();
+
 		this.formLogin = this.formBuilder.group({
 			email: [this.loginModel.email, [Validators.required, Validators.email]],
 			password: [this.loginModel.password, [Validators.required]]
@@ -33,6 +35,7 @@ export class LoginComponent implements OnInit {
 		if (this.formLogin) {
 			this.service.login(this.formLogin.value).subscribe((resp: any) => {
 				if (resp[0]) {
+					localStorage.setItem('user', JSON.stringify(resp[0]))
 					this.router.navigateByUrl('inventario');
 				} else {
 					this.alertas.errors('Revisar email y/o contraseña')

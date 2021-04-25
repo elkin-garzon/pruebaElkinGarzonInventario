@@ -1,0 +1,53 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-8 mx-auto">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <h3>Categorias</h3>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form [formGroup]="formFilter" class="row">
+                            <mat-form-field class="col-md-12">
+                                <mat-label>Buscar</mat-label>
+                                <input matInput type="text" formControlName="categoria" autocomplete="off">
+                                <mat-error *ngIf="formFilter.controls.categoria.errors != null">
+                                    <span *ngIf="formFilter.controls.categoria.errors.required">Campo categoria es Requerido</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="col-md-3">
+                        <button mat-raised-button color="primary" type="button" (click)="openDialog()" style="width: 100%;">Agregar</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button mat-raised-button color="primary" type="button" (click)="getData()" style="width: 100%;">Ver Todos</button>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Categoria</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of listCategories">
+                                    <td>{{row.id}}</td>
+                                    <td>{{row.categoria}}</td>
+                                    <td> prueba</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

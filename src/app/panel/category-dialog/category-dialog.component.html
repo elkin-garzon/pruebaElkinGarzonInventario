@@ -1,0 +1,21 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-12 mx-auto">
+        <h3>Agregar Categorias</h3>
+        <hr>
+        <form [formGroup]="formCategory" class="row">
+            <mat-form-field class="col-md-12">
+                <mat-label>Categoria</mat-label>
+                <input matInput type="text" formControlName="categoria" autocomplete="off">
+                <mat-error *ngIf="formCategory.controls.categoria.errors != null">
+                    <span *ngIf="formCategory.controls.categoria.errors.required">Campo categoria es Requerido</span>
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <hr>
+            <div class="col-md-12">
+                <button mat-raised-button color="primary" type="submit" [disabled]="!formCategory.valid" (click)="submit()" style="margin-right: 10px;">Guardar</button>
+                <button mat-raised-button  mat-dialog-close color="primary" type="submit">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,24 +1,54 @@
 {
-	"roles": [
-		{
-			"rol": "Admin",
-			"id": 1
-		},
-		{
-			"rol": "User",
-			"id": 2
-		}
-	],
-	"login": [
-		{
-			"email": "user@example.com",
-			"password": "123456789",
-			"id_rol": 2
-		},
-		{
-			"email": "admin@example.com",
-			"password": "123456789",
-			"id_rol": 1
-		}
-	]
+  "roles": [
+    {
+      "rol": "Admin",
+      "id": 1
+    },
+    {
+      "rol": "User",
+      "id": 2
+    }
+  ],
+  "login": [
+    {
+      "email": "user@example.com",
+      "password": "123456789",
+      "id_rol": 2
+    },
+    {
+      "email": "admin@example.com",
+      "password": "123456789",
+      "id_rol": 1
+    }
+  ],
+  "categorias": [
+    {
+      "categoria": "escolares",
+      "id": 1
+    },
+    {
+      "categoria": "prueba",
+      "id": 2
+    },
+    {
+      "categoria": "prueba dos",
+      "id": 3
+    },
+    {
+      "categoria": "prueba ",
+      "id": 4
+    },
+    {
+      "categoria": "prueba",
+      "id": 5
+    },
+    {
+      "categoria": "prueba 13",
+      "id": 6
+    },
+    {
+      "categoria": "prueba adasd",
+      "id": 7
+    }
+  ]
 }

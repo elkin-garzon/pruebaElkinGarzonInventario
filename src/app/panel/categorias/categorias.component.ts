@@ -59,6 +59,7 @@ export class CategoriasComponent implements OnInit {
 
 	search() {
 		if (this.formFilter.valid) {
+			this.viewProducts = false;
 			this.listCategories = [];
 			this.service.filterData(this.formFilter.value).subscribe((resp: any) => {
 				this.listCategories = resp;

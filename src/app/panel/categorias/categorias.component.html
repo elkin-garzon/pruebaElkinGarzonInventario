@@ -53,7 +53,7 @@
             </mat-card-content>
         </mat-card>
 
-        <mat-card class="example-card" *ngIf="viewProducts">
+        <mat-card class="example-card" *ngIf="viewProducts"  style="margin-top: 15px;">
             <mat-card-content>
                 <hr>
                 <app-products [sendData]="listProducts" [category]="selectCategory" (eventCategory)="receiveData($event)"></app-products>

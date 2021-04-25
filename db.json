@@ -87,6 +87,13 @@
       "precio": 1000,
       "estado": false,
       "id": 8
+    },
+    {
+      "nombre": "prueba 3",
+      "id_categoria": 2,
+      "precio": 500,
+      "estado": false,
+      "id": 9
     }
   ]
 }

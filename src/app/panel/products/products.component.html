@@ -23,10 +23,38 @@
                     <td>{{ row.nombre }}</td>
                     <td>{{ row.precio | currency }}</td>
                     <td>
-                        <mat-checkbox  [checked]="row.estado" color="primary"  [(ngModel)]="row.estado"  (ngModelChange)="checkProduct(row)"></mat-checkbox>
+                        <mat-checkbox  [checked]="row.estado" color="primary"  [(ngModel)]="row.estado"  (ngModelChange)="checkProduct()"></mat-checkbox>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <br>
     </div>
+    <hr>
+    <mat-card class="example-card">
+        <mat-card-content>
+            <form>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label>SubTotalt</label>
+                        <div class="form-control">
+                            {{subTotal | currency}}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label>IVA</label>
+                        <div class="form-control">
+                            {{totaIva | currency}}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Total</label>
+                        <div class="form-control">
+                            {{total | currency}}
+                        </div>
+                    </div>
+                </div> 
+            </form>
+        </mat-card-content>
+    </mat-card>
 </div>
